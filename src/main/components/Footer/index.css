@@ -1,0 +1,52 @@
+.footer {
+	width: 100%;
+	background: #272727;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 50px;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+}
+
+.text-footer {
+	color: #FFFFFF;
+	font-family: Uni Sans;
+	font-style: normal;
+	font-weight: 250;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+.social {
+	display: flex;
+	align-items: flex-start;
+}
+
+.partners, .communication{
+	display: flex;
+	align-items: center;
+}
+
+.icon-social {
+	margin-top: 10px;
+}
+
+.medium.ui.button.subscribe {
+	width: 180px;
+	background: rgb(2,0,36) !important;
+	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,0,241,1) 0%, rgba(255,255,255,0.6652452025586354) 100%) !important;
+}
+
+.div-subscribe-email {
+	width: 622px;
+	height: 82px;
+}
+
+.input-subscribe-email {
+	background: #C4C4C4 !important;
+}

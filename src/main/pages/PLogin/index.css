@@ -1,0 +1,65 @@
+.pLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: no-repeat center url('../../images/login.svg');
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.login.label {
+  margin-bottom: 0;
+}
+
+.margin {
+  margin-top: 20px !important;
+}
+
+.formLogin {
+  max-width: 400px;
+  max-height: 300px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  font-family: MrPalkerDadson;
+  font-size: 36px;
+}
+
+.massive.ui.button {
+  min-height: 80px;
+}
+
+.text.black {
+  font-family: Uni Sans;
+  font-style: normal;
+  font-weight: 250;
+  font-size: 14px;
+  line-height: 17px;
+  margin-right: 10px;
+  margin-top: auto;
+}
+
+.white {
+  color: #FFFFFF;
+}
+
+.black {
+  color: #272727;
+}
+
+.input {
+  width: 100%;
+}
+
+.yellow {
+  color: #F8C647;;
+}
