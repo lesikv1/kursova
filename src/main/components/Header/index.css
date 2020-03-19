@@ -13,6 +13,7 @@
 }
 
 .button {
-	background: white !important;
-	color: black !important;
+	background: #272727 !important;
+	color: white !important;
+	/* border: 1px solid white !important; */
 }
