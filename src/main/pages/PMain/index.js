@@ -30,16 +30,18 @@ const data = [
   }
 ]
 
+const listCategory = [
+  'Mathematic',
+  'Pfethic',
+  'History',
+  'Anatomia',
+  'Medithina',
+  'Minors',
+  'Maths',
+]
+
 export default function PMain() {
   const [category, setCategory] = useState('')
-
-  const onBlur = () => {
-    console.log(false)
-  }
-
-  const onFocus = () => {
-    console.log(true)
-  }
 
   return (
     <div className='p-main'>
@@ -47,8 +49,7 @@ export default function PMain() {
         <InputSearch
           value={category}
           onChange={setCategory}
-          onBlur={onBlur}
-          onFocus={onFocus}
+          listData={listCategory}
         />
       </div>
       <div className='p-main-content'>
