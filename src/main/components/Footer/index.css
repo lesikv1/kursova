@@ -22,20 +22,6 @@
 	line-height: 22px;
 }
 
-.social {
-	display: flex;
-	align-items: flex-start;
-}
-
-.partners, .communication{
-	display: flex;
-	align-items: center;
-}
-
-.icon-social {
-	margin-top: 10px;
-}
-
 .medium.ui.button.subscribe {
 	width: 180px;
 	background: rgb(2,0,36) !important;
@@ -43,7 +29,8 @@
 }
 
 .div-subscribe-email {
-	width: 622px;
+	max-width: 622px;
+	width: 300px;
 	height: 82px;
 }
 

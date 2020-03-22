@@ -10,10 +10,10 @@ export default function Header() {
     <div className='header'>
       {(pathname !== '/login' && pathname !== '/registration') && (
         <div className='buttons'>
-          <button class="medium ui button">FAQ</button>
-          <button class="medium ui button">МОЖЛИВОСTI</button>
-          <button class="medium ui button">КОНТАКТИ</button>
-          <button class="massive ui button">ПРОФIЛЬ</button>
+          <button className="medium ui button">FAQ</button>
+          <button className="medium ui button">МОЖЛИВОСTI</button>
+          <button className="medium ui button">КОНТАКТИ</button>
+          <button className="massive ui button">ПРОФIЛЬ</button>
         </div>
       )}
     </div>
