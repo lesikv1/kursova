@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Card, InputSearch } from '../../components'
+import {AutoComplete} from 'primereact/autocomplete'
 
 import './index.css'
 
@@ -30,26 +31,36 @@ const data = [
   }
 ]
 
-const listCategory = [
-  'Mathematic',
-  'Pfethic',
-  'History',
-  'Anatomia',
-  'Medithina',
-  'Minors',
-  'Maths',
-]
-
 export default function PMain() {
-  const [category, setCategory] = useState('')
+  const [brandSuggestions, setBrandSuggestions] = useState(null)
+  const [brands, setBrands] = useState( ['Audi', 'BMW', 'Fiat', 'Ford', 'Honda', 'Jaguar', 'Mercedes', 'Renault', 'Volvo'])
+  const [lesik, setLesik] = useState('')
+
+  const suggestBrands = (event) => {
+    let results = brands.filter((brand) => {
+      return brand.toLowerCase().startsWith(event.query.toLowerCase());
+    });
+    setBrandSuggestions(results)
+}
 
   return (
     <div className='p-main'>
       <div className='p-sort-data'>
-        <InputSearch
-          value={category}
-          onChange={setCategory}
-          listData={listCategory}
+        <AutoComplete
+          className='autocomplete-input'
+          value={lesik}
+          onChange={(e) => setLesik(e.value)}
+          suggestions={brandSuggestions}
+          completeMethod={suggestBrands} 
+          dropdown={true} 
+        />
+        <AutoComplete
+          className='autocomplete-input'
+          value={lesik}
+          onChange={(e) => setLesik(e.value)}
+          suggestions={brandSuggestions}
+          completeMethod={suggestBrands} 
+          dropdown={true} 
         />
       </div>
       <div className='p-main-content'>
