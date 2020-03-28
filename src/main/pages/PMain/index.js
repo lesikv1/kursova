@@ -1,35 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Card, InputSearch } from '../../components'
 import {AutoComplete} from 'primereact/autocomplete'
+import axios from 'axios'
 
 import './index.css'
-
-const data = [
-  {
-    title: 'title',
-    dateStart: 'dateStart',
-    dateEnd: 'dateEnd',
-    location: 'location',
-    category: 'mathematic',
-    id: '123sdasd'
-  },
-  {
-    title: 'title',
-    dateStart: 'dateStart',
-    dateEnd: 'dateEnd',
-    location: 'location',
-    category: 'mathematic',
-    id: '123sda2d'
-  },
-  {
-    title: 'title',
-    dateStart: 'dateStart',
-    dateEnd: 'dateEnd',
-    location: 'location',
-    category: 'mathematic',
-    id: '123sda7d'
-  }
-]
 
 export default function PMain() {
   const [brandSuggestions, setBrandSuggestions] = useState(null)
@@ -41,7 +15,24 @@ export default function PMain() {
       return brand.toLowerCase().startsWith(event.query.toLowerCase());
     });
     setBrandSuggestions(results)
-}
+  }
+
+  const [cards, setCards] = useState([])
+
+  useEffect(() => {
+    renderCards()
+  }, [])
+
+  const renderCards = async () => {
+    let {data = {cards: []}} = await axios.get('/api/get-cards')
+    console.log(data.cards[0])
+
+    setCards(data.cards.map((item, index) => {
+      return (<Card item={item} key={index} />)
+      })
+    )
+  }
+
 
   return (
     <div className='p-main'>
@@ -64,9 +55,7 @@ export default function PMain() {
         />
       </div>
       <div className='p-main-content'>
-        {
-          data.map((item) => <Card item={item} key={item.id} />)
-        }
+        {cards}
       </div>
     </div>
   );

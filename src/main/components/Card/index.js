@@ -4,7 +4,12 @@ import ImageCard from '../../images/les.jpg'
 import './index.css'
 
 function Card({item}) {
-  const {title, dateStart, dateEnd, location, category} = item
+  const {
+    title,
+    startDate,
+    endDate,
+    sity
+  } = item
 
   return (
     <div className='c-card-root'>
@@ -16,16 +21,16 @@ function Card({item}) {
         <div className='c-card-dates'>
           <div className='c-card-date-start'>
             <Icon name='calendar alternate outline' />
-            <p>{dateStart}</p>
+            <p className='c-start-data'>Тэзы до {startDate}</p>
           </div>
           <div className='c-card-date-end'>
             <Icon name='calendar alternate outline' />
-            <p>{dateEnd}</p>
+            <p className='c-end-data'>Начало {endDate}</p>
           </div>
         </div>
-        <div className='c-card-location'>
+        <div className='c-card-sity'>
           <Icon name='map marker alternate' />
-          <p>{location}</p>
+          <p>{sity}</p>
         </div>
       </div>
     </div>
