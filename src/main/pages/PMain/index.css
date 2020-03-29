@@ -26,6 +26,10 @@
   margin-bottom: 100px;
 }
 
-.autocomplete-input {
+.p-c-autocomplete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 20px;
 }

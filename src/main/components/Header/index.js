@@ -13,7 +13,6 @@ export default function Header() {
           <button className="medium ui button">FAQ</button>
           <button className="medium ui button">МОЖЛИВОСTI</button>
           <button className="medium ui button">КОНТАКТИ</button>
-          <button className="massive ui button">ПРОФIЛЬ</button>
         </div>
       )}
     </div>
