@@ -120,6 +120,7 @@ export default function PMain() {
         <div className='p-c-autocomplete'>
           <h3>Отрасль</h3>
           <AutoComplete
+            className='c-input-autocomplete'
             value={valueDirection}
             onChange={(e) => setValueDirection(e.value)}
             suggestions={suggestionDirections}
@@ -128,8 +129,9 @@ export default function PMain() {
           />
         </div>
         <div className='p-c-autocomplete'>
-          <h3>Странна</h3>
+          <h3>Страна</h3>
           <AutoComplete
+            className='c-input-autocomplete'
             value={valueCountries}
             onChange={(e) => setValueCountries(e.value)}
             suggestions={suggestionCountries}

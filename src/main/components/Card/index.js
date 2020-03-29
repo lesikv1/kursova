@@ -14,7 +14,7 @@ function Card({item}) {
   return (
     <div className='c-card-root'>
       <div className='c-card-top'>
-        <img src={ImageCard} width='100%' height='100%' />
+        <img className='c-image' src={ImageCard} />
       </div>
       <div className='c-card-buttom'>
         <p className='c-card-title'>{title}</p>
