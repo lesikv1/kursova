@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { Card, InputSearch } from '../../components'
 import {AutoComplete} from 'primereact/autocomplete'
+import Loader from 'react-loader-spinner'
 import axios from 'axios'
 
 import './index.css'
 
 export default function PMain() {
   const [cards, setCards] = useState([])
+  const [loading, setLoading] = useState(false)
  
   const [suggestionDirections, setSuggestionDirections] = useState(null)
   const [directions, setDirections] = useState([
@@ -105,12 +107,16 @@ export default function PMain() {
 
 
   const renderCards = async (link) => {
+    setLoading(true)
     let {data = {cards: []}} = await axios.post('/api/get-cards', {data: {link}})
 
-    setCards(data.cards.map((item, index) => {
-      return (<Card item={item} key={index} />)
-      })
-    )
+    setTimeout(() => {
+      setCards(data.cards.map((item, index) => {
+        return (<Card item={item} key={index} />)
+        })
+      )
+      setLoading(false)
+    }, 1000)
   }
 
 
@@ -139,19 +145,11 @@ export default function PMain() {
             dropdown={true} 
           />
         </div>
-        {/* <div className='p-c-autocomplete'>
-          <h3>Месяц</h3>
-          <AutoComplete
-            value={lesik}
-            onChange={(e) => setLesik(e.value)}
-            suggestions={brandSuggestions}
-            completeMethod={suggestBrands} 
-            dropdown={true} 
-          />
-        </div> */}
       </div>
       <div className='p-main-content'>
-        {cards}
+        {loading ? (
+          <Loader type="BallTriangle" color="#00BFFF" height={80} width={80} />
+        ) : cards}
       </div>
     </div>
   );
